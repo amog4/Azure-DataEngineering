@@ -1,0 +1,10 @@
+* create vm using UI 
+
+    * Go to VM in azure 
+    * enter the name , resource group , vm image and size 
+    * download the private key and create the vm 
+
+* using cli 
+
+    * can use azure cli or install from https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli
+    * To list all the vms - az vm image list --all --offer Ubuntu --all

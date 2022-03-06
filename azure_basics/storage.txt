@@ -1,0 +1,24 @@
+Azure storage
+
+* Blob storage and ADLS gen2 
+    * Hierarchical namespace support just means that directories are supported. Unlike Blob storage, which provides pseudo directory operations via namespaces, ADLS Gen2 provides real support for directories with POSIX compliance
+
+* Azure Files - 
+    * Remote files shares that can be mounted using server message block or Network file share
+
+Azure Queue- 
+    * Used to store large number of messages between source and destination
+
+Azure Tables- 
+    * Key - value pare un structure data
+    * Azure table and cosmos db
+    * difference is scaling limit
+
+Azure managed - this is similar to aws elastic block storage  
+
+Azure Network VNET - private network - similar to aws VPN   
+    * create a network interface card to connect vm and internet outside
+
+Azure Vm scale set - comes with load balancer 
+
+Azure functions - similar to aws lambda 

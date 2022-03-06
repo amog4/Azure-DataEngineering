@@ -1,0 +1,16 @@
+3 important file format in azure and aws
+
+Avro - row based storage format
+        Need to query entire file (good for writes)
+        ex - 11,am,w,12,sm,e
+
+Parquet - column based storage format 
+        ex- 11,12,am,sm,w,e
+
+ORC - similar to parquet mostly used for hive
+
+How to choose
+
+if there are lot of etl jobs then choose avro 
+
+For transformation zone use parquet or orc 

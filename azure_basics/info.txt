@@ -1,0 +1,6 @@
+Azure
+* account ---> subscription ---> resource group ---> resources (vms, adf.)
+
+* delete resource group when not used while leaning
+
+
