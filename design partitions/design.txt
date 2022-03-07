@@ -1,0 +1,37 @@
+Azure uses range partition for storing blobs
+
+In a range partition, files that are in a lexical sequence end up together in a partition.
+
+Azure storage uses account name + container name + blob name as partition key
+
+ADLF gen2 for folder structure
+
+Horizontal partitioning - subset of rows called shards(select key for even distribution)
+Vertical 
+funcational partitioning
+
+
+synapse analytics - dedicated pools and spark sql 
+
+A dedicated SQL pool is a massively parallel processing (MPP) system that splits the queries into 60 parallel queries and executes them in parallel. Each of these smaller queries runs on something called a distribution. A distribution is a basic unit of processing and storage for a dedicated SQL pool. There are three different ways to distribute (shard) data among distributions, as listed here:
+Dedicated SQL pool also supports three types of tables: clustered columnstore, clustered index, and heap tables.
+
+ingress rate  - in rate
+egress rate - out 
+
+SCD1- overwrite
+SCD2 - flag
+SCD3 - preserve the value 
+SCD4 - split 
+SCD6 - SCD1,SCD2,SCD3
+
+Temporal data - 
+    tables keep track of changes over time (with system versioning = on)
+
+ADL
+    Pipeline - activity - dataset - linkedservice and triggers
+
+Incremental load 
+    - Using watermarks db table
+    - file to_timestamp
+    - partition based on time
