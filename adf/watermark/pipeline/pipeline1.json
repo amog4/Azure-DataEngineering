@@ -79,14 +79,13 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT * FROM FactTrips WHERE LastModifiedTime > '@{activity('PreviousWatermark').output.firstRow.WatermarkValue}' AND LastModifiedTime <= '@{activity('NewWatermark').output.firstRow.WatermarkValue}';\n\n",
+						"sqlReaderQuery": "SELECT * FROM facttrips WHERE lastmodifedtime > '@{activity('PreviousWatermark').output.firstRow.WatermarkValue}' AND LastModifiedTime <= '@{activity('NewWatermark').output.firstRow.WatermarkValue}';\n\n",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false,
+						"sqlWriterStoredProcedureName": "[dbo].[updatewatermark]",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
