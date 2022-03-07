@@ -86,6 +86,8 @@
 					"sink": {
 						"type": "AzureSqlSink",
 						"sqlWriterStoredProcedureName": "[dbo].[updatewatermark]",
+						"sqlWriterTableType": "static",
+						"storedProcedureTableTypeParameterName": "test",
 						"storedProcedureParameters": {
 							"lastmodifedtime": {
 								"type": "DateTime"
