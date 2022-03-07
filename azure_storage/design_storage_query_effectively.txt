@@ -1,0 +1,37 @@
+Azure Sql , synapse serverless/dedicated pools (sql warehouse)
+Spark and hive
+
+storage layer
+    partitioning data and replicating the data also reduce cross partition operations  
+    pruning - keep data that is useful 
+    eventual consistancy (eventually data would be updated)
+
+Application layer
+    data caching - cpu (central processing units)
+    application turning tuning (such as varying the sizes of containers, increasing parallelism)
+        VMs size
+    spark - num of executors
+            executor memory
+            cores
+    resultset in synapse for caching
+Query layer
+    Indexing (hashmap) and views (logical projection of data)
+
+
+Optimize for faster and evenly distributed reads
+    Azure has subscription limits on size of data, network and ingest
+
+Streaming data folder structure is important 
+    {Region}/Sensitive/{subject matter}/{yyyy}/{MM}
+
+synapse dedicated sql pools
+    MPP (splits the queries into 60 parallel queries) each of this run on distribution (unit of processing and storage for dedicated pool)
+
+    storage -uses azure storage and distributed hash tables, replicated tables and round robin tables
+
+    round robin (default distribution) is similar to even distribution in redshift 
+    hash tables - in redshift its key distribution (with distribution = hash)
+    replicated tables (with distribution = replicated) - all distribution in redshift
+
+hot and cold tier (min 30 days)
+Archive for long duration (min 180 days) by data life cycle management

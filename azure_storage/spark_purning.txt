@@ -1,0 +1,12 @@
+
+
+# sample 
+columnNames = ["tripID","driverID","customerID","cabID","date","startLocation","endLocation"] tripData = [ ('100', '200', '300', '400', '20220101', 'New York', 'New Jersey'), ('101', '201', '301', '401', '20220102', 'Tempe', 'Phoenix') ]
+
+
+df = spark.createDataFrame(data = tripdate, schema = columnnames)
+
+dfdata = df.withColumn("date", to_timestamp(col("date"),'yyyyMMdd'))
+dfdata = df.withColumn("year", to_timestamp(col("date"),'yyyy'))
+dfdata = df.repartition('year')
+dfdata.write.partition('year').text()

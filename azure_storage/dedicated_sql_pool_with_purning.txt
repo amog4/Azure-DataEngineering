@@ -1,0 +1,20 @@
+
+create table dbo.triptable (
+
+    tripid int not null,
+    driverid int not null,
+    customerid int not null,
+    tripdate int,
+    startlocation varchar(40),
+    endlocation varchar(40)
+)
+
+with (partition (tripdate) range right for values
+(20220201,20220202)
+)
+)
+
+* range right syntax specifies that values values in the right side of the range
+ex - all dates < 20220201 partition
+
+

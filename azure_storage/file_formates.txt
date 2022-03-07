@@ -13,4 +13,4 @@ How to choose
 
 if there are lot of etl jobs then choose avro 
 
-For transformation zone use parquet or orc 
+For transformation zone use parquet (or) orc 
