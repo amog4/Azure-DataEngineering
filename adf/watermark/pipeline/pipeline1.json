@@ -86,6 +86,14 @@
 					"sink": {
 						"type": "AzureSqlSink",
 						"sqlWriterStoredProcedureName": "[dbo].[updatewatermark]",
+						"storedProcedureParameters": {
+							"lastmodifedtime": {
+								"type": "DateTime"
+							},
+							"TableName": {
+								"type": "String"
+							}
+						},
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
