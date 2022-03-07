@@ -94,7 +94,6 @@
 								"type": "String"
 							}
 						},
-						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
