@@ -291,7 +291,7 @@
 						"          Value as string,",
 						"          Industry_code_ANZSIC06 as string",
 						"     ),",
-						"     filePattern:'\"staging/driver/out/\"+toString(year(currentDate()))   ',",
+						"     filePattern:(\"/staging/driver/out/\"+toString(year(currentDate()))),",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
