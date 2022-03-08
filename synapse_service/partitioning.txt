@@ -1,0 +1,14 @@
+Horizontal shards
+
+synapse sql dedicated pools have 3 different types of tables based on how the data is stored
+
+    clustered index
+    heap
+    clustered column stored
+
+3 ways to shard the data
+
+    hash (key dist), round robin (even dis) , replicated (all dist)
+
+
+The dedicated SQL pool by default partitions the data into 60 distributions.
