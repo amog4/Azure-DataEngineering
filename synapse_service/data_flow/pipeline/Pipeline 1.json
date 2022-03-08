@@ -17,7 +17,10 @@
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "Dataflow1",
-						"type": "DataFlowReference"
+						"type": "DataFlowReference",
+						"parameters": {
+							"Year": "\"staging/driver/out/\"+Year"
+						}
 					},
 					"compute": {
 						"coreCount": 8,
