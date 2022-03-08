@@ -50,7 +50,9 @@
 							"dataflow": {
 								"referenceName": "Dataflow1",
 								"type": "DataFlowReference",
-								"parameters": {},
+								"parameters": {
+									"Year": "\"staging/driver/out/\"+Year"
+								},
 								"datasetParameters": {
 									"source1": {},
 									"sink1": {}
@@ -290,7 +292,6 @@
 						"          Industry_code_ANZSIC06 as string",
 						"     ),",
 						"     filePattern:'\"staging/driver/out/\"+toString(year(currentDate()))   ',",
-						"     truncate: true,",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
