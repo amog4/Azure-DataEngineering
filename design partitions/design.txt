@@ -35,3 +35,5 @@ Incremental load
     - Using watermarks db table
     - file to_timestamp
     - partition based on time
+
+Copy data tool - use tumbling windows to trigger time bases loads
