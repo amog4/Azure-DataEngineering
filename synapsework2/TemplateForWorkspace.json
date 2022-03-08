@@ -50,9 +50,7 @@
 							"dataflow": {
 								"referenceName": "Dataflow1",
 								"type": "DataFlowReference",
-								"parameters": {
-									"Year": "\"staging/driver/out/\" + Year\r\n\r\n"
-								},
+								"parameters": {},
 								"datasetParameters": {
 									"source1": {},
 									"sink1": {}
@@ -75,8 +73,7 @@
 				"lastPublishTime": "2022-03-08T06:47:22Z"
 			},
 			"dependsOn": [
-				"[concat(variables('workspaceId'), '/dataflows/Dataflow1')]",
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+				"[concat(variables('workspaceId'), '/dataflows/Dataflow1')]"
 			]
 		},
 		{
@@ -292,7 +289,8 @@
 						"          Value as string,",
 						"          Industry_code_ANZSIC06 as string",
 						"     ),",
-						"     filePattern:'\"staging/driver/out/\" + Year',",
+						"     filePattern:'\"staging/driver/out/\"+toString(year(currentDate()))   ',",
+						"     truncate: true,",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
