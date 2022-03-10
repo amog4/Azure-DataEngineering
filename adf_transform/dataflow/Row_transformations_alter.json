@@ -1,0 +1,86 @@
+{
+	"name": "Row_transformations_alter",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"name": "taxidataset"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "alterRow1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          VendorID as short,",
+				"          tpep_pickup_datetime as timestamp,",
+				"          tpep_dropoff_datetime as timestamp,",
+				"          passenger_count as short,",
+				"          trip_distance as double,",
+				"          RatecodeID as short,",
+				"          store_and_fwd_flag as boolean,",
+				"          PULocationID as short,",
+				"          DOLocationID as short,",
+				"          payment_type as short,",
+				"          fare_amount as double,",
+				"          extra as double,",
+				"          mta_tax as double,",
+				"          tip_amount as double,",
+				"          tolls_amount as double,",
+				"          improvement_surcharge as double,",
+				"          total_amount as double,",
+				"          congestion_surcharge as double",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     limit: 100,",
+				"     ignoreNoFilesFound: false) ~> taxidataset",
+				"taxidataset alterRow(insertIf(total_amount > 10)) ~> alterRow1",
+				"alterRow1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          VendorID as string,",
+				"          tpep_pickup_datetime as string,",
+				"          tpep_dropoff_datetime as string,",
+				"          passenger_count as string,",
+				"          trip_distance as string,",
+				"          RatecodeID as string,",
+				"          store_and_fwd_flag as string,",
+				"          PULocationID as string,",
+				"          DOLocationID as string,",
+				"          payment_type as string,",
+				"          fare_amount as string,",
+				"          extra as string,",
+				"          mta_tax as string,",
+				"          tip_amount as string,",
+				"          tolls_amount as string,",
+				"          improvement_surcharge as string,",
+				"          total_amount as string,",
+				"          congestion_surcharge as string",
+				"     ),",
+				"     filePattern:'alter_insert',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}
