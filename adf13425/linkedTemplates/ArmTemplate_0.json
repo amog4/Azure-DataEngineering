@@ -555,7 +555,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/pipeline3')]",
+			"name": "[concat(parameters('factoryName'), '/row_alter_transform')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
