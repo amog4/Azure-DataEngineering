@@ -12,3 +12,6 @@ synapse sql dedicated pools have 3 different types of tables based on how the da
 
 
 The dedicated SQL pool by default partitions the data into 60 distributions.
+
+
+

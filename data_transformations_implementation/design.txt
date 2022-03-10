@@ -1,0 +1,7 @@
+ADF
+
+Mapping data flow provides 3 types of transformations
+
+Schema transformation - adding new columns 
+Row transformation - updateing rows
+Multi-input/output  - sliping rows (slicing the dataset)

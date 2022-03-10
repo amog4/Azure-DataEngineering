@@ -7,8 +7,8 @@ Azure storage uses account name + container name + blob name as partition key
 ADLF gen2 for folder structure
 
 Horizontal partitioning - subset of rows called shards(select key for even distribution)
-Vertical 
-funcational partitioning
+Vertical (table with fewer columns)
+functional partitioning
 
 
 synapse analytics - dedicated pools and spark sql 
