@@ -31,7 +31,7 @@
 				"     validateSchema: false,",
 				"     limit: 100,",
 				"     ignoreNoFilesFound: false) ~> yellowtripdata202101",
-				"yellowtripdata202101 aggregate(sum_tip = sum(toDecimal('tip_amount'))) ~> aggretip",
+				"yellowtripdata202101 aggregate(sum_tip = sum(toInteger('tip_amount'))) ~> aggretip",
 				"aggretip sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
