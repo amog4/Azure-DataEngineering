@@ -1,0 +1,66 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"name": "yellowtripdata202101"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "aggregate1"
+				}
+			],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     limit: 100,",
+				"     ignoreNoFilesFound: false) ~> yellowtripdata202101",
+				"yellowtripdata202101 aggregate(sumagg = sum(tip_amount)) ~> aggregate1",
+				"aggregate1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          VendorID as string,",
+				"          tpep_pickup_datetime as string,",
+				"          tpep_dropoff_datetime as string,",
+				"          passenger_count as string,",
+				"          trip_distance as string,",
+				"          RatecodeID as string,",
+				"          store_and_fwd_flag as string,",
+				"          PULocationID as string,",
+				"          DOLocationID as string,",
+				"          payment_type as string,",
+				"          fare_amount as string,",
+				"          extra as string,",
+				"          mta_tax as string,",
+				"          tip_amount as string,",
+				"          tolls_amount as string,",
+				"          improvement_surcharge as string,",
+				"          total_amount as string,",
+				"          congestion_surcharge as string",
+				"     ),",
+				"     filePattern:'aggregate_taxi_amount',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}
