@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Azure-DataEngineering223"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"linkedService1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://test3434vgg.dfs.core.windows.net"
+		},
+		"linkedService1_properties_typeProperties_url": {
+			"value": "https://test3434vgg.dfs.core.windows.net"
+		}
+	}
+}
