@@ -1,0 +1,1 @@
+{ "firstname": "Alice", "middlename": "", "lastname": "Hood", "id": "100", "locations": [{"city": "San Francisco","state": "CA"}, {"city": "San Jose","state": "CA"}, {"city": "Miami", "state": "FL"} ], "gender": "Female" }

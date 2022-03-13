@@ -1,0 +1,14 @@
+using collate in db to encode
+
+CREATE DATABASE TripsDB COLLATE Latin1_General_100_BIN2_UTF8;
+
+# spark
+
+select hex(encode('azure','utf-16'))
+
+select decode('0c','utf-16')
+
+
+
+
+

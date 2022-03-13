@@ -1,0 +1,15 @@
+# POC
+
+Data ingestion - Fetch Trips from blob and fetch fares frm sql 
+
+Data cleaning - The data cleaning to clean the data ADF 
+
+Transform - using spark databricks
+
+Ingest - copy the data to DATABASE
+
+Storage - 
+
+    raw data - iac/raw/trips/2022/01/01
+    Transform - iac/Transform/in/2022/01/01
+                iac/Transform/out/2022/01/01
