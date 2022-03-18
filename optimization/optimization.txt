@@ -1,0 +1,34 @@
+Skew data
+At Storage Level
+    Try different partition levels
+    Random Split
+
+
+Fixing skews at compute levels
+    Use compute stats
+
+UDF - try to create optimal udfs
+
+Small files
+    Use ADF Copy 
+    Spark delta (by default enabled) for synapse (using delta and optimize)
+
+Data Spills 
+    Increase compute capacity
+    Reduce data partition (repartition)
+    Skew
+
+    In Synapse check the health of temp db 
+    Spark check the summary stats
+
+    Spark shuffle 
+        spark.conf.set(spark.sql.shuffle.partition,200)
+
+Indexing 
+    cluster Index
+    clustercolumn Index
+    Heap Index
+
+Spark - azure hyperspace import com.microsoft.hyperspace.index._
+
+
