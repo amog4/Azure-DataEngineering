@@ -1,0 +1,21 @@
+Cluster Type
+
+All Purpose   
+Shared among many users
+Persistant
+Expensive to run 
+
+Job Cluster
+Created for jobs
+Cheaper to run  
+
+
+Cluster Config
+
+Standard, High Concurrency , Single Node
+
+
+Data runtimes 
+databricks runtime
+
+cluster mode,cluster vm type

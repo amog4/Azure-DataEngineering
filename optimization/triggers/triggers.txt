@@ -1,0 +1,22 @@
+Triggering Batch (using azure function)
+Errors 
+    Pool Errors
+    Node Errors
+    Job Errors
+    Tast Errors
+
+Validating batch Errors
+    Get metadata in ADF
+
+Managing data pipeling 
+    Manage and Monitor 
+
+IR - Itegration runtime (ssis)
+    Compute infrastructure 
+        Azure integration runtime
+        Self hosted runtime
+        Azure - ssis
+
+    
+
+

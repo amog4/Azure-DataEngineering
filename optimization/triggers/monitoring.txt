@@ -1,0 +1,5 @@
+Implimenting logging used by azure monitoring 
+
+Azure Monitor- 
+    Metrics and Logs 
+    
