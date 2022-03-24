@@ -42,3 +42,12 @@ dbutils.fs.mounts()
 # COMMAND ----------
 
 
+dbutils.fs.ls('/mnt/test3434vgg/raw/')
+
+# COMMAND ----------
+
+dbutils.fs.unmount(f"/mnt/{storage_account}/raw")
+
+# COMMAND ----------
+
+
